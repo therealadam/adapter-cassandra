@@ -1,0 +1,52 @@
+PATH
+  remote: .
+  specs:
+    adapter-cassandra (0.5.1)
+
+PATH
+  remote: ~/Desktop/Do/adapter
+  specs:
+    adapter (0.5.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    SystemTimer (1.2.1)
+    activesupport (3.0.3)
+    cassandra (0.9.0)
+      json
+      rake
+      simple_uuid (>= 0.1.0)
+      thrift_client (>= 0.6.0)
+    diff-lcs (1.1.2)
+    i18n (0.5.0)
+    json (1.4.6)
+    log_buddy (0.5.0)
+    rake (0.8.7)
+    rspec (2.4.0)
+      rspec-core (~> 2.4.0)
+      rspec-expectations (~> 2.4.0)
+      rspec-mocks (~> 2.4.0)
+    rspec-core (2.4.0)
+    rspec-expectations (2.4.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.4.0)
+    simple_uuid (0.1.1)
+    thrift (0.5.0)
+    thrift_client (0.6.0)
+      thrift (~> 0.5.0)
+    timecop (0.3.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  SystemTimer (~> 1.2.1)
+  activesupport (~> 3)
+  adapter!
+  adapter-cassandra!
+  cassandra (~> 0.9.0)
+  i18n (= 0.5.0)
+  log_buddy (~> 0.5.0)
+  rspec (~> 2.3)
+  timecop (~> 0.3.5)
