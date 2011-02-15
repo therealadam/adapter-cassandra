@@ -1,5 +1,5 @@
 require 'adapter'
-# require 'cassandra/0.7'
+require 'cassandra/0.7'
 
 module Adapter
   module Cassandra
@@ -20,12 +20,22 @@ module Adapter
     end
 
     def encode(value)
-      {'toystore' => Marshal.dump(value)}
+      case value
+      when String
+        {"toystore" => value}
+      when Hash
+        value.inject({}) { |result, (k, v)| result.update(k.to_s => v.to_s) }
+      end
     end
 
     def decode(value)
       return nil if value.empty?
-      Marshal.load(value['toystore'])
+      case value
+      when Hash
+        value["toystore"] if value.has_key?("toystore")
+      else
+        value
+      end
     end
   end
 end

@@ -5,11 +5,10 @@ root_path = Pathname(__FILE__).dirname.join('..').expand_path
 lib_path  = root_path.join('lib')
 $:.unshift(lib_path)
 
-require 'cassandra/0.7'
 require 'adapter/cassandra'
 
 client  = Cassandra.new('Toystore')
-adapter = Adapter[:cassandra].new(client, :column_family => :boom)
+adapter = Adapter[:cassandra].new(client, :column_family => :Boom)
 adapter.clear
 
 adapter.write('foo', 'bar')
